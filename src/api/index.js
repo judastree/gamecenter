@@ -3,14 +3,14 @@ export function request (params) {
     wx.request({
       ...params,
       success: res => {
-        if (res.data.code === 0) {
-          resolve(res.data.data)
+        if (res.data) {
+          resolve(res.data)
         } else {
           wx.showToast({
-            title: res.data.detail,
+            title: '请求失败',
             icon: 'none'
           })
-          reject(res.data.detail)
+          reject(res.data)
         }
       },
       fail: err => {

@@ -32,10 +32,10 @@
       },
       getGameList () {
         request({
-          url: 'https://judatree.cn/api/json/game_list.json',
+          url: 'https://judastree.cn/api/game_list.json',
           method: 'GET'
         }).then(data => {
-          console.log(data)
+          this.list = data
         })
       }
     },
